@@ -12,7 +12,7 @@ def insertionsort_iterative(intlist: list[int]) -> list[int]:
     # 0th location (left of 1st location) is assumed already sorted since that left side is composed
     # of only 1 element! Therefore we start with a 2nd element at location 1.   
     # We compare our right element (as part of outer loop) with each element on left side 
-    # (as part of inner while loop) until we one which is smaller. 
+    # (as part of inner while loop) until we find a smaller one. 
 
     # In other words, during each comparison we see whether the element on the left is greater than the element on 
     # the right if it greater it must be moved to the right so we create a 'space' for the right element
