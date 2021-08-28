@@ -48,8 +48,8 @@ def insertionsort_recursive(intlist: list[int], listlen) -> list[int]:
     #location of one element left of last element
     j = location_lastElement - 1
     
-    #look keep shifting elements to the right overwriting last element as well. 
-    #shifting eventually creates 'space' for the lastElement to go and fit in.
+    #keep shifting elements to the right overwriting last element as well. 
+    #shifting elements to the right eventually creates 'space' for the lastElement on the left to go and fit in.
     while j >=0 and intlist[j] > lastElement:
         
         intlist[j + 1] = intlist[j]
