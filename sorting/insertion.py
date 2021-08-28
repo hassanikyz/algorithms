@@ -1,4 +1,4 @@
-
+####### ITERATIVE SOLUTION #######
 def insertionsort_iterative(intlist: list[int]) -> list[int]:
     
     print(f"initial {intlist}")
@@ -31,6 +31,7 @@ def insertionsort_iterative(intlist: list[int]) -> list[int]:
 
 print("Insertion sorted (iter) ", insertionsort_iterative([10, 7, 6, 4, 9, 3, 8, 5, 2, 0, 1]))
 
+####### RECURSIVE SOLUTION #######
 def insertionsort_recursive(intlist: list[int], listlen) -> list[int]:
 
     print(f"Initial List {intlist[0:listlen]}")
