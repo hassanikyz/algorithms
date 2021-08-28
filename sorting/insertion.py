@@ -64,36 +64,4 @@ def insertionsort_recursive(intlist: list[int], listlen) -> list[int]:
 
 print("Insertion sorted (recursively) ", insertionsort_recursive([10, 7, 6, 4, 9, 3, 8, 5, 2, 0, 1], len([10, 7, 6, 4, 9, 3, 8, 5, 2, 0, 1])))
 
-def insertionsort_recursive(intlist: list[int], listlen) -> list[int]:
-
-    print(f"Initial List {intlist[0:listlen]}")
-    if (listlen <= 1):
-        return intlist
-    
-    # first solve it for a smaller list
-    insertionsort_recursive(intlist, listlen - 1)
-
-    # now (assuming everything on the left is sorted) take the last element and place it in its correct position
-    # take the last element and start searching for its correct location inside the already sorted list
-    location_lastElement = listlen - 1
-    lastElement = intlist[location_lastElement]
-
-    #location of one element left of last element
-    j = location_lastElement - 1
-    
-    #look keep shifting elements to the right overwriting last element as well. 
-    #shifting eventually creates 'space' for the lastElement to go and fit in.
-    while j >=0 and intlist[j] > lastElement:
-        
-        intlist[j + 1] = intlist[j]
-        print(f"After shift {intlist[0:listlen]}")
-        j -= 1
-
-    #location found, now fit it in there!
-    intlist[j+1] = lastElement
-
-    print(f"After fitting in lastElement {lastElement}, {intlist[0:listlen]}")
-    return intlist
-
-print("Insertion sorted (recursively) ", insertionsort_recursive([10, 7, 6, 4, 9, 3, 8, 5, 2, 0, 1], len([10, 7, 6, 4, 9, 3, 8, 5, 2, 0, 1])))
 
