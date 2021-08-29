@@ -5,7 +5,7 @@ def bubblesort(intList: list[int]) -> list[int]:
     print("unsorted ", intList)
     listlen = len(intList)
 
-    #Outer loop is to go through all elements in the list (n - 1), hence starting with 1
+    #Outer loop is to go through all elements in the list 
     for i in range(listlen):
 
         #after each iteration the largest element reaches it final position hence loop only the
