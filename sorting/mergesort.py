@@ -11,7 +11,6 @@ def mergeBothLists(left: list[int], right: list[int]):
 
     # we don't know which one is shorter so ensuring we exit the loop whenever we hit last element of either of them.
     while (i < len(left) and j < len(right)):
-        
       
         if (left[i] <= right[j]):
             # if left has the smallest element take that and increment its counter
