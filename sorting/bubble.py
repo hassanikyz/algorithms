@@ -5,11 +5,17 @@ def bubblesort(intList: list[int]) -> list[int]:
     print("unsorted ", intList)
     listlen = len(intList)
 
-    #loop to do this 
-    for i in range(1, listlen):
-        for j in range(1, listlen):
-            if (arr[listlen - j] < arr[listlen - 1 - j]):
-                arr[listlen - j], arr[listlen - 1 - j] = arr[listlen - 1 - j], arr[listlen - j]
+    #Outer loop is to go through all elements in the list (n - 1), hence starting with 1
+    for i in range(listlen):
+
+        #after each iteration the largest element reaches it final position hence loop only the
+        # remaining unsorted ones
+        for j in range(0, listlen - 1 - i):
+            #look at two consecutive elements and swap if left is greater than right
+            if (arr[j] > arr[j+1] ):
+                # if left element is greater than right
+                # swap
+                arr[j], arr[j+1] = arr[j+1], arr[j]
                 #print(arr)
  
     return intList
