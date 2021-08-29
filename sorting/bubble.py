@@ -8,7 +8,7 @@ def bubblesort(intList: list[int]) -> list[int]:
     #Outer loop is to go through all elements in the list 
     for i in range(listlen):
 
-        #after each iteration the largest element reaches it final position hence loop only the
+        #after each iteration the largest element reaches it finals position hence loop through only the
         # remaining unsorted ones
         for j in range(0, listlen - 1 - i):
             #look at two consecutive elements and swap if left is greater than right
