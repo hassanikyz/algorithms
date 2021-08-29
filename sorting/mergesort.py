@@ -1,5 +1,5 @@
 def mergeBothLists(left: list[int], right: list[int]):
-    # print(f"left {left}, right {right}")
+
 
     # left list iterator
     i = 0
