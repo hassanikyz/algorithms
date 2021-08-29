@@ -1,8 +1,14 @@
 def mergeBothLists(left: list[int], right: list[int]):
     # print(f"left {left}, right {right}")
+
+    # left list iterator
     i = 0
+    # right list iterator
     j = 0
+
+    # create an empty list which will have merged data from both right and left
     mergedList = []
+
     while (i < len(left) and j < len(right)):
         if (left[i] <= right[j]):
             mergedList.append( left[i])
@@ -12,10 +18,11 @@ def mergeBothLists(left: list[int], right: list[int]):
             mergedList.append(right[j])
             j += 1
         
+    # we don't know which of the two lists was shorter so best to take the remaining (if any) elements and simply 
+    # add them to the mergedList to get the final output
     mergedList += left[i:]
     mergedList += right[j:]
     
-    # print(f"mergeBothLists: Merged List {mergedList}")
     return mergedList
 
 def mergesort(original: list[int]):
