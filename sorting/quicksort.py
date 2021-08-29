@@ -5,14 +5,14 @@ def partition(lst, left, right):
     if (left >= right):
         return lst
 
-    tmpval = lst[left]
+    pivotVal = lst[left]
     i, j = left, right
     while i <= j:
 
-        while (lst[i] < tmpval):
+        while (lst[i] < pivotVal):
             i += 1
 
-        while (lst[j] > tmpval):
+        while (lst[j] > pivotVal):
             j -= 1
 
         if i <= j:
