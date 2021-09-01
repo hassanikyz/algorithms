@@ -4,7 +4,7 @@ def selection_sort(originalist: list[int]):
 
     # Go through the entire list looking for a minimum value (smallest). Once min val is found swap it with
     # the very first element of the unsorted elements.
-    # In the beginning the very first element is obviously at 0th location.
+    # In the beginning the very first element is obviously supposed to be at 0th location.
     # However as min values are placed in their correct locations the size of the unsorted list shrinks
     # and as a result the very first element of unsorted ones is now increasingly the next ith location.
     
