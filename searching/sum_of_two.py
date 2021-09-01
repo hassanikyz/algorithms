@@ -41,6 +41,19 @@ def find_sum(lst, n):
         if index:
             return [i, n - i]
 
-
+        """
+        O(n) implementation using sets
+        """
+def find_sum_faster(lst, n):
+    
+    found_vals = set()
+    
+    for j in lst:
+        if (n-j) in found_vals:
+            return [j, n-j]
+    
+        found_vals.add(j)
+            
+    return [-1, -1]
 
 print(find_sum([1, 2, 3, 4], 5))
