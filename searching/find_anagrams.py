@@ -8,6 +8,14 @@ def anagrams(lst):
     if len(lst) < 2:
         return lst
     
+    """
+    Main idea is anagrams can be found by sorting strings first. Two strings are anagrams if after sort they are equal to each other. 
+    Therefore, we iterate thorugh the list and sort each string found in the list. Sorted string act as a key to a dictionary entry. 
+    Values against the key are actually a list of indices which point back to original list. 
+    
+    Once such a dictionary is generated, we iterate through the dictionary and generate a list which carries pairs of anagrams found in original list.
+    """
+    
     mydict = {}
     for i in range(len(lst)):
         key = "".join(sorted(lst[i]))
@@ -40,3 +48,9 @@ input = [
     'lives'
   ]
 print("Pairs of Anagrams are \n: ", anagrams(input))
+
+""" 
+### output ####
+Pairs of Anagrams are 
+: [['tom marvolo riddle ', 'i am lord voldemort'], ['abc', 'cab'], ['def', 'fed'], ['brag', 'grab'], ['clint eastwood ', 'old west action'], ['elvis', 'lives']]
+"""
