@@ -18,10 +18,12 @@ def anagrams(lst):
     
     mydict = {}
     for i in range(len(lst)):
+        # sorted creates a list of characters which then needs to be joined to recreate the string
         key = "".join(sorted(lst[i]))
         if key in mydict:
             mydict[key].append(i)
         else:
+            # value is a list of indices
             mydict[key] = [i]
 
     result = []
