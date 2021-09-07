@@ -25,6 +25,6 @@ def printPascal(s) :
     
     return result
 
-print("Result for row = 5", printPascal(5))
+print("Result for row = 5: ", printPascal(5))
 ###output###
-# [1, 5, 10, 10, 5, 1]
+# Result for row = 5: [1, 5, 10, 10, 5, 1]
