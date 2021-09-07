@@ -2,8 +2,8 @@ def decimalToBinary(num) :
   
   """
   ALGORITHM:
-  When you divide say 2 by 2 you get 1 as the divider and 0 as the remainder. Notice if you simply concatentate these two entities (divider and remainder)
-  you get your binary represenation "10". However when number is larger than 2 this process can be repeated for the divider and the remainders.
+  When you divide say 2 by 2 you get 1 as the dividend and 0 as the remainder. Notice if you simply concatentate these two entities (dividend and remainder)
+  you get your binary represenation "10". However when number is larger than 2 this process can be repeated for the dividend and the remainders.
   
   For example, take 13. 
   13 % 2 => "1" <=== this becomes part of the representation
