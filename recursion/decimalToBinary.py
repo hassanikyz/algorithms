@@ -1,5 +1,28 @@
 def decimalToBinary(num) :
-  # Write your code here
+  
+  """
+  ALGORITHM:
+  When you divide say 2 by 2 you get 1 as the divider and 0 as the remainder. Notice if you simply concatentate these two entities (divider and remainder)
+  you get your binary represenation "10". However when number is larger than 2 this process can be repeated for the divider and the remainders.
+  
+  For example, take 13. 
+  13 % 2 => "1" <=== this becomes part of the representation
+  13 // 2 => 6
+  
+  repeating only for 6 we get
+  6 % 2 => "0" <=== this becomes part of the representation
+  6 // 2 => 3
+  
+  repeating only for 3 we get
+  3 % 2 =>  "1"  <=== this becomes part of the representation
+  3 // 2 => "1"  <=== this becomes part of the representation
+  
+  Process should terminate when number is below 2. Thus the representation is "1101" going from the most significant (bottom) to least significant (top)
+  
+  This shows problem can solved by recursion and results concatenated.
+  
+  """
+  
   if num < 2:
     return str(num)
   
