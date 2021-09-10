@@ -1,3 +1,24 @@
+"""
+RECURSIVE APPROACH
+There are two pointers startIndex and currentIndex.
+startIndex traverses the entire list
+currentIndex increases when '(' is found and decreases when ')' is found. 
+
+"""
+def balanced(lst, startIndex = 0, currentIndex = 0) :
+
+  if startIndex == len(lst):
+    return currentIndex == 0
+
+  if currentIndex < 0:
+    return False
+
+  if lst[startIndex] == "(":
+    return balanced(lst, startIndex+1, currentIndex+1)
+  
+  
+  if lst[startIndex] == ")":
+    return balanced(lst, startIndex+1, currentIndex-1)
 
 """
 ITERATIVE Approach:
