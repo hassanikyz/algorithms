@@ -44,6 +44,15 @@ def balanced(lst, startIndex = 0, currentIndex = 0) :
   
   if lst[startIndex] == ")":
     return balanced(lst, startIndex+1, currentIndex-1)
+  
+  
+  
+print(balanced(['(', '(', ')', ')', '(', ')'])	)
+## True	is expected
+print(balanced(['(', ')', '(', ')']))
+## True	is expected
+print(balanced([')', '('])  )
+## False is expected
 
 """
 ITERATIVE Approach:
