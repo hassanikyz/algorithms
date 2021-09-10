@@ -1,3 +1,5 @@
+import copy
+
 def generate_all_subsets(s):
 
     def helper(slate, s, pos):
@@ -44,4 +46,22 @@ def generate_all_subsets(s):
     return res   
 
 inp = "abcd"
-print(f"All subsets for {inp} are\n {generate_all_subsets(inp)}")
+print(f"Recursive: All subsets for {inp} are\n {generate_all_subsets(inp)}")
+
+
+## ITERATIVE approach 
+def subsets( nums):
+
+    result = [[]]
+    for num in nums:
+        mylist = []
+        for c in result:
+            mylist.append(c + [num])
+        for m in mylist:
+            result.append(m)
+
+    return result
+
+print("All subsets for number list [1,2,3] are ", subsets([1,2,3])) 
+
+
