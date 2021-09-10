@@ -18,7 +18,9 @@ def generate_all_subsets(s):
         "a" + "b"  => "ab" 
         Similarly for the 3rd input 'c' we have previous 4 sets to use as base and create 4 more sets by adding 3 to each
         
-        
+        Recursive approach works here. 
+        Base case is to stop when we have gone through all elements. This is done by using a helper function with input as pointer to a position in the string
+        We keep a temporary list as 'slate' where we collect subsets and at the end join the elements into a string and put in final result.
         
         
         """
