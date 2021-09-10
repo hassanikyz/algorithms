@@ -1,4 +1,29 @@
+
+
 """
+Challenge:
+Given an array that contains opening and closing brackets, check whether or not the brackets are balanced in the array.
+
+Example of balanced
+()
+
+(())
+
+(())()
+
+((()))((()))
+
+Example of unbalanced
+
+(
+
+)()(
+
+((()()()()
+
+((())))((((()
+
+
 RECURSIVE APPROACH
 There are two pointers startIndex and currentIndex.
 startIndex traverses the entire list
