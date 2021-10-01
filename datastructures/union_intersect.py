@@ -15,7 +15,8 @@ from Node import Node
 
 
 def union(list1, list2):
-    # Write your code here
+    # Go to the end of list1 and attach it to the head of list2 to get the union.
+    
     head1 = list1.get_head()
     head2 = list2.get_head()
     last1 = head1
@@ -29,7 +30,8 @@ def union(list1, list2):
 
 
 def intersection(list1, list2):
-    # Write your code here
+    # Remove duplicates, store all elements of list1 in a dictionary. Traverse through second list and remove all elements which are NOT found in dictionary.
+    # This should make list2 as intersection of two given lists
 
     list1.remove_duplicates()
     list2.remove_duplicates()
