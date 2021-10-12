@@ -32,9 +32,11 @@ def solve_knapsack(profits, weights, capacity):
 
     profit1 = 0
     if weights[index] <= capacity:   # means we have space for accomodating more items
-      profit1 = profits[index] + knapsack_recursive(profits, weights, capacity - weights[index], index+1)
+      
+      # profit from current item + profit from items with remaining capacity (using recursion)
+      profit1 = profits[index] + knapsack_recursive(profits, weights, capacity - weights[index], index+1) 
 
-
+    # skipping current items and calculating profit from all the remaining ones. With two options we will get the max of the two at the end
     profit2 = knapsack_recursive(profits, weights, capacity, index+1)
     
       
