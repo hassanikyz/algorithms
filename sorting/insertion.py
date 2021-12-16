@@ -11,11 +11,11 @@ def insertionsort_iterative(intlist: list[int]) -> list[int]:
     # During the process left side is kept sorted at all times until we reach the end of the list. 
     # 0th location (left of 1st location) is assumed already sorted since that left side is composed
     # of only 1 element! Therefore we start with a 2nd element at location 1.   
-    # We compare our right element (as part of outer loop) with each element on left side 
-    # (as part of inner while loop) until we find a smaller one. 
+    # We compare each right element (as part of outer loop) with each element on left side 
+    # (as part of inner while loop) until we find a smaller right element (candidate to move to left). 
 
-    # In other words, during each comparison we see whether the element on the left is greater than the element on 
-    # the right. If left is greater it must be moved to the right so we create a 'space' for the right element
+    # In other words, during each comparison we see whether elements on the left are greater than the element on 
+    # the right. If left is greater it must be shifted over to the right so we create a 'space' for the right element
     # to go and fit in.
     # Basically we shift all bigger elements (as we do with playing cards) to the right and then
     # place the element (at ith location) at the newly created 'space'!
