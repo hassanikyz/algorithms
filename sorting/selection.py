@@ -2,6 +2,8 @@ def selection_sort(originalist: list[int]):
     
     listlen = len(originalist)
 
+    # It is called selection sort, because it repeatedly selects the next-smallest element and swaps it into place
+    
     # Go through the entire list looking for a minimum value (smallest). Once min val is found swap it with
     # the very first element of the unsorted elements.
     # In the beginning the very first element is obviously supposed to be at 0th location.
