@@ -1,4 +1,7 @@
 ####### ITERATIVE SOLUTION #######
+
+# This sort works on the core idea of inserting an element at a particular position after creating a 'space' for it
+
 def insertionsort_iterative(intlist: list[int]) -> list[int]:
     
     print(f"initial {intlist}")
