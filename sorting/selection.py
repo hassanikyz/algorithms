@@ -4,17 +4,18 @@ def selection_sort(originalist: list[int]):
 
     # It is called selection sort, because it repeatedly selects the next-smallest element and swaps it into place
     
-    # Go through the entire list looking for a minimum value (smallest). Once min val is found swap it with
-    # the very first element of the unsorted elements.
+    # Go through the entire list look for a minimum value (smallest). Once min val is found swap it with
+    # the very first element of the remaining unsorted elements.
+    
     # In the beginning the very first element is obviously supposed to be at 0th location.
-    # However as min values are placed in their correct locations the size of the unsorted list shrinks
-    # and as a result the very first element of unsorted ones is now increasingly the next ith location.
+    # As smallest values are placed in their correct locations (starting with 0th) the size of the unsorted list shrinks.
+    # As a result the very first element of unsorted portion of the list is now increasingly the next ith location.
     
     for i in range(listlen):
         minval_idx = i
         for j in range(i+1, listlen):
             if originalist[j] < originalist[minval_idx]:
-                #found a new min? Update the index
+                #found a new min? Update the index 
                 minval_idx = j
 
         #pythonic way of swapping the first element of unsorted bunch with the newly found min value    
