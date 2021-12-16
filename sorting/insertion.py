@@ -15,7 +15,7 @@ def insertionsort_iterative(intlist: list[int]) -> list[int]:
     # (as part of inner while loop) until we find a smaller one. 
 
     # In other words, during each comparison we see whether the element on the left is greater than the element on 
-    # the right if it greater it must be moved to the right so we create a 'space' for the right element
+    # the right. If left is greater it must be moved to the right so we create a 'space' for the right element
     # to go and fit in.
     # Basically we shift all bigger elements (as we do with playing cards) to the right and then
     # place the element (at ith location) at the newly created 'space'!
@@ -23,6 +23,7 @@ def insertionsort_iterative(intlist: list[int]) -> list[int]:
         tmp = intlist[i]
         j = i - 1
         while j >= 0 and intlist[j] > tmp:
+            #shift left element to the right
             intlist[j+1] = intlist[j]
             j -= 1
         intlist[j+1] = tmp
