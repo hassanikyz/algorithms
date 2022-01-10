@@ -26,7 +26,7 @@ def insertionsort_iterative(intlist: list[int]) -> list[int]:
         tmp = intlist[i]
         j = i - 1
         while j >= 0 and intlist[j] > tmp:
-            #shift left element to the right
+            #shift the left element on to the right
             intlist[j+1] = intlist[j]
             j -= 1
         intlist[j+1] = tmp
