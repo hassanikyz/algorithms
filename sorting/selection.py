@@ -18,7 +18,7 @@ def selection_sort(originalist: list[int]):
                 #found a new min? Update the index 
                 minval_idx = j
 
-        #pythonic way of swapping the first element of unsorted bunch with the newly found min value    
+        #pythonic way of swapping the first element of unsorted list with the newly found min value    
         originalist[i], originalist[minval_idx] = originalist[minval_idx], originalist[i]
 
     return originalist
