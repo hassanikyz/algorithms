@@ -7,9 +7,9 @@ def selection_sort(originalist: list[int]):
     # Go through the entire list look for a minimum value (smallest). Once min val is found swap it with
     # the very first element of the remaining unsorted elements.
     
-    # In the beginning the very first element is obviously supposed to be placed at 0th location.
-    # As smallest values are placed in their correct locations (starting with 0th) the size of the unsorted list shrinks.
-    # As a result the very first element of unsorted portion of the list is now increasingly the next location to receive right element there.
+    # In the beginning the very first element is obviously supposed to be placed at the 0th location.
+    # As smallest values are placed in their correct locations the size of the unsorted list shrinks.
+    
     
     for i in range(listlen):
         minval_idx = i
