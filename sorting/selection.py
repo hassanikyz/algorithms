@@ -5,7 +5,7 @@ def selection_sort(originalist: list[int]):
     # It is called selection sort, because it repeatedly selects the next-smallest element and swaps it into place
     
     # Go through the entire list look for a minimum value (smallest). Once min val is found swap it with
-    # the very first element of the remaining unsorted elements.
+    # the very first element of the *remaining unsorted* elements.
     
     # In the beginning the very first element is obviously supposed to be placed at the 0th location.
     # As smallest values are placed in their correct locations the size of the unsorted list shrinks.
