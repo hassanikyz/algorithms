@@ -1,6 +1,4 @@
-# Online Python compiler (interpreter) to run Python online.
-# Write Python 3 code in this online editor and run it.
-print("Hello world")
+
 mlist = [10, 9, 0, 6, 2, 4, 8, 3, 7, 5, 1]
 def bubble_sort(mlist):
     #print(mlist)
@@ -47,7 +45,7 @@ print(insertion_sort(mlist))
         
                 
 
-##########################
+#########  OUTPUT  #########
 """
 Using bubble sort
 [10, 9, 0, 6, 2, 4, 8, 3, 7, 5, 1]
