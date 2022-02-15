@@ -1,6 +1,5 @@
 
 
-
 """
 Leetcode.com problem # 198
 https://leetcode.com/problems/house-robber/
@@ -20,15 +19,27 @@ Input: nums = [2,7,9,3,1]
 Output: 12
 Explanation: Rob house 1 (money = 2), rob house 3 (money = 9) and rob house 5 (money = 1).
 Total amount you can rob = 2 + 9 + 1 = 12.
- 
 
 """
+
 class Solution(object):
     def rob_iterative(self, nums):
         """
         :type nums: List[int]
         :rtype: int
         """
+    
+    """
+    KEY IDEA behind this iterative solution
+    Keep track of max profit from house robbing in a list indexed by house location
+    0th location should contain profit from robbing house 0 and so on.
+    Base cases are of course if list is of length 1 then answer is 0th location contains number from house 1
+    if # of houses are 2 then max of either one
+    if # of houses are 3 or more then for 3rd house (location # 2), must contain max of current + previous max (excluding immediately previous house or one further down). 
+    We accumulate max numbers in a dp list. This ensure consecutive last 2 entries (and one of them) have the real max (final answer). That is the reason we look for last 2 
+    previous not only at final return but also during calcutions at every ith location.
+    
+    """
         size = len(nums)
         dp = [0]*(size+1)
         
@@ -45,7 +56,6 @@ class Solution(object):
         for i in range(2, size):
             dp[i] = nums[i] + max(dp[i-2], dp[i-3] | 0)
             
-        # print(dp)
         return max(dp[size - 1], dp[size - 2])
    
 
