@@ -56,4 +56,61 @@ def find_sum_faster(lst, n):
             
     return [-1, -1]
 
+### most efficient solution ###
+def twoSum(numbers: List[int], target: int) -> List[int]:
+
+    low, high = 0, len(numbers) - 1
+
+    while (high > low):
+
+        if target == numbers[low] + numbers[high]:
+            return (low+1, high+1)
+        elif target > numbers[low] + numbers[high]:
+            low += 1
+        else:
+            high -= 1
+
+    return [1, -1]
+
+###
+def twoSum_vslow(self, numbers, target):
+    """
+    :type numbers: List[int]
+    :type target: int
+    :rtype: List[int]
+    """
+    low = 0
+    high = low + 1
+
+    def binary_search(key, mlist, left, right):
+
+        if len(mlist) == 1:
+            if mlist[0] == key:
+                return 0
+
+        while (left <= right):
+
+            mid = left + (right - left)//2
+            if mlist[mid] == key:
+                return mid
+
+            if key < mlist[mid]:
+                right = mid - 1
+            if key > mlist[mid]:
+                left = mid + 1
+
+        return - 1
+
+    high = len(numbers) - 1
+    while low < len(numbers):
+        first = numbers[low]
+        if low < high:
+            second = binary_search(target - first, numbers, low+1, high )
+            if second != -1:
+                return [low+1, second+1]
+        low += 1
+
+    return [-1, -1]
+            
+            
 print(find_sum([1, 2, 3, 4], 5))
