@@ -19,8 +19,8 @@ def searchRange( nums: List[int], target: int) -> List[int]:
       start = 0
       end = len(nums) - 1
 
-
       index = -1
+      # binary search algo to find any index of target number
       while start < end:
 
           mid = start + (end - start)//2
@@ -33,7 +33,7 @@ def searchRange( nums: List[int], target: int) -> List[int]:
           else:
               end = mid - 1
 
-
+      # special case handling when there is only 1 element in an array of 1 element
       if start == end and nums[start] == target:
           return [start, start]
 
@@ -46,6 +46,7 @@ def searchRange( nums: List[int], target: int) -> List[int]:
       while left >=0 and nums[left] == target:
           left -= 1
 
+      # if there is more than 1 element of same target value,  left would have moved else it wouldn't have
       if left != index:
           left += 1
 
@@ -53,6 +54,7 @@ def searchRange( nums: List[int], target: int) -> List[int]:
       while right < len(nums) and nums[right] == target:
           right += 1
 
+      # if there is more than 1 element of same target value,  right would have moved else it wouldn't have
       if right != index:
           right -= 1
 
