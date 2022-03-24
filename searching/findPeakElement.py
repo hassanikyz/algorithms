@@ -26,7 +26,11 @@ def findPeakElement_recursive(nums: List[int]) -> int:
 
       return helper(nums, 0, len(nums) - 1)
 
+# binary search in a different 
+
+
       
+# This iterative solution is originally done by myself, above one (recursive) is taken from leetcode solution
 def findPeakElement( nums: List[int]) -> int:
         
       lennums = len(nums)
@@ -53,3 +57,18 @@ def findPeakElement( nums: List[int]) -> int:
           right -= 1
 
       return 0
+
+
+def findPeakElement_simple_bin_search( nums: List[int]) -> int:
+      start  = 0
+      end = len(nums) - 1
+
+      while (start < end):
+
+            mid = start + (end - start)//2
+            if nums[mid] <  nums[mid + 1]:
+                start = mid + 1
+            else:
+                end = mid
+
+      return start
