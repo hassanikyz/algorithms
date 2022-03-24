@@ -11,7 +11,7 @@ You may imagine that nums[-1] = nums[n] = -∞.
 You must write an algorithm that runs in O(log n) time.
 """
 
-def findPeakElement_recursive(self, nums: List[int]) -> int:
+def findPeakElement_recursive(nums: List[int]) -> int:
 
       def helper(nums, s, e):
 
@@ -27,7 +27,7 @@ def findPeakElement_recursive(self, nums: List[int]) -> int:
       return helper(nums, 0, len(nums) - 1)
 
       
-def findPeakElement(self, nums: List[int]) -> int:
+def findPeakElement( nums: List[int]) -> int:
         
       lennums = len(nums)
       if lennums < 2:
