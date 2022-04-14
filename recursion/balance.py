@@ -76,8 +76,6 @@ def balanced_iter(lst, startIndex = 0, currentIndex = 0) :
     if balance < 0:
       return False
 
-  if balance < 0:
-      return False
   return True
 
 print("Balanced is ", balanced_iter([')', ')', '(', '(',  '(', ')']))
