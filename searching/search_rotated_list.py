@@ -59,3 +59,98 @@ def pivoted_binary_search(lst, n, key):
   
 lst = [7, 8, 9, 0, 3, 5, 6]
 print("Result ", pivoted_binary_search(lst, 7, 3))
+
+
+"""
+https://leetcode.com/problems/search-in-rotated-sorted-array/
+"""
+
+# Solution # 2:
+# ------------------------------------------------------------------ #
+    def search( nums: List[int], target: int) -> int:
+        
+        # finding pivot through binary search method, faster than linear search performed in previous solution
+        def find_pivot(left, right):
+        
+            
+            if nums[right] > nums[left]:
+                # if there is no rotation then left most element will be smaller than right most. 
+                return 0
+            else:
+                # if there is rotation then lets search using the fact it was sorted to begin with.
+                while left <= right:
+                    pivot = (right + left)//2
+                    
+                    
+                    if nums[pivot] > nums[pivot+1]:
+                        # this can only happen if pivot + 1 element is smallest
+                        return pivot + 1
+
+                    if nums[pivot] < nums[left]:
+                        # if pivot element is smaller than the leftmost it can only happen if situation is like this
+                        #   7, 8, 9, 0, 1, 2, 3, 4, 5, 6
+                        #   pivot = 5th element => 2  which is smaller than leftmost 7
+                        #   It means smallest element must be left side of the pivot.
+                        #   so lets move the right pointer to left of the pivot
+                        right = pivot -1
+                    else:
+                        # if pivot element is greater or equal to left element then scenario would be like this
+                        #  4, 5, 6, 7, 8, 9, 0, 1, 2, 3
+                        # pivot = 5th element => 9 which is larger than 4
+                        # in this scenario most likely smallest element is on the right side of the pivot so move left pointer there.
+                        left = pivot + 1
+                    
+            
+        
+        def bin_search(nums, target):
+            
+            start = 0
+            end = len(nums) - 1
+            while start <= end:
+                
+                mid = start + (end - start)//2
+                if nums[mid] == target:
+                    return mid
+                
+                if nums[mid] > target:
+                    end = mid - 1
+                else:
+                    start = start + 1
+        
+            return -1
+        
+        lennums = len(nums)
+        if len(nums) == 0 or target < nums[0] and target > nums[lennums - 1]:
+            return -1
+        
+        if lennums == 1:
+            if target == nums[0]:
+                return 0
+            return -1
+        
+        
+        # find the pivot
+        lowest = find_pivot(0, lennums - 1)
+
+
+        if target == nums[lowest]:
+            return lowest
+        
+        if lowest == 0:
+            return bin_search(nums, target)
+        
+        if target > nums[lowest] and target <= nums[lennums - 1]:
+            index = bin_search(nums[lowest: ], target)
+            if index == -1:
+                return -1
+            
+            return lowest + index
+        else:
+            index = bin_search(nums[:lowest], target)
+            if index == -1:
+                return -1
+            
+            return index
+ 
+        return -1
+# ------------------------------------------------------------------ #
