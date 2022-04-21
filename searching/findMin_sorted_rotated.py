@@ -34,3 +34,38 @@ https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
             
         return nums[end]
         
+        
+## ----------- another implementation --------------------- ##        
+def findMin_sortedList(self, nums: List[int]) -> int:
+
+    def search_min(left, right):
+
+        if  nums[right] > nums[left]:
+            return nums[left]
+
+        while left <= right:
+
+            pivot = (left + right)//2
+            if nums[pivot] > nums[pivot+1]:
+                return nums[pivot + 1]
+
+            if nums[pivot] < nums[left]:
+                right = pivot - 1
+            else:
+                left = pivot + 1
+
+        return -1
+
+    start = 0
+    end = len(nums) - 1
+
+    if nums[start] < nums[end] or end == 0:
+        #array is not rotated
+        return nums[0]
+
+    return search_min(start, end)
+
+
+
+
+
