@@ -88,16 +88,20 @@ https://leetcode.com/problems/search-in-rotated-sorted-array/
 
                     if nums[pivot] < nums[left]:
                         # if pivot element is smaller than the leftmost it can only happen if situation is like this
-                        #   7, 8, 9, 0, 1, 2, 3, 4, 5, 6
+                        #   [ 7, 8, 9, 0, 1, 2, 3, 4, 5, 6 ] 
                         #   pivot = 5th element => 2  which is smaller than leftmost 7
                         #   It means smallest element must be left side of the pivot.
                         #   so lets move the right pointer to left of the pivot
+                        #   OR situation is like this
+                        #   [ 4, 5, 1, 2, 3 ]  where 1 is the actual lowest element and is the pivoted one. Still we move right pointer to its left.
+                        #   but will eventually exit via line # 87
                         right = pivot -1
                     else:
-                        # if pivot element is greater or equal to left element then scenario would be like this
-                        #  4, 5, 6, 7, 8, 9, 0, 1, 2, 3
-                        # pivot = 5th element => 9 which is larger than 4
-                        # in this scenario most likely smallest element is on the right side of the pivot so move left pointer there.
+                        # if pivot element is greater than left element then scenario would be like this
+                        #   [ 4, 5, 6, 7, 8, 9, 0, 1, 2, 3 ]
+                        #   pivot = 5th element => 9 which is larger than 4
+                        #   in this scenario most likely smallest element is on the right side of the pivot so move left pointer there.
+                
                         left = pivot + 1
                     
             
