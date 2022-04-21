@@ -47,3 +47,26 @@ def find_in(lst, number):
     return False
 
 print("Found = ", find_in([[10, 11, 12, 13], [14, 15, 16, 17], [27, 29, 30, 31], [32, 33, 39, 80]], 35))
+
+# solution #2
+# https://leetcode.com/problems/search-a-2d-matrix/ 
+# Same idea ...just a different implementation
+def searchMatrix(matrix: List[List[int]], target: int) -> bool:
+
+
+    for row in matrix:
+        if target >= row[0] and target <= row[len(row) - 1]:
+            start = 0
+            end = len(row) - 1
+
+            while (start <= end):
+
+                mid = start + (end - start)//2
+                if row[mid] == target:
+                    return True
+                if target > row[mid]:
+                    start = mid + 1
+                else:
+                    end = mid - 1
+
+    return False
