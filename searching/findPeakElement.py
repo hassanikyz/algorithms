@@ -59,6 +59,16 @@ def findPeakElement( nums: List[int]) -> int:
       return 0
 
 
+"""
+Binary search approach is usually applicable to sorted areas for faster searching. 
+In this case, we can go to mid every time and check mid and mid + 1 elements.
+If mid element is smaller that means we can move the 'start' pointer to mid+1
+If mid element is larger than next that means we could potentially have that element mid element as the peak 
+hence we move the 'end' pointer to mid.
+
+As result when start meets the end pointer we will be sure element pointed to by start is a peak element
+"""
+
 def findPeakElement_simple_bin_search( nums: List[int]) -> int:
       start  = 0
       end = len(nums) - 1
