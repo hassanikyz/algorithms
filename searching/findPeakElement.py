@@ -60,7 +60,7 @@ def findPeakElement( nums: List[int]) -> int:
 
 
 """
-Binary search approach is usually applicable to sorted areas for faster searching. 
+Binary search approach is usually applicable to sorted data for faster searching. 
 In this case, we can go to mid every time and check mid and mid + 1 elements.
 If mid element is smaller that means we can move the 'start' pointer to mid+1
 If mid element is larger than next that means we could potentially have that element mid element as the peak 
