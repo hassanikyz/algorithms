@@ -22,7 +22,13 @@ import sys
            /      \
  (i=0)    4         5  (i=1)
             
-            
+ 
+ input coins = [1,2,3]   target = 4
+ number of ways 4 can be achieved
+ 1+1+1+1
+ 1+1+2
+ 1+3
+ 2+2
             
 """
 from functools import lru_cache
