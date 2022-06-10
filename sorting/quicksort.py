@@ -20,11 +20,11 @@ def partition(lst, left, right):
     # at which point we need repartition and repeat
     while i <= j:
 
-        # find index of value less than pivotVal
+        # find index of value greater than pivotVal
         while (lst[i] < pivotVal):
             i += 1
 
-        # find index of value greater than pivotVal
+        # find index of value less than pivotVal
         while (lst[j] > pivotVal):
             j -= 1
 
