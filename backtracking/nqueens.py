@@ -3,9 +3,11 @@
         :type n: int
         :rtype: List[List[str]]
         """
-        col = set()
-        posDiag = set()
-        negDiag = set()
+   
+        
+        col = set()   # checking if a column already contains a queen
+        posDiag = set()  # checking positive diagnal with row+column constant values 
+        negDiag = set()  # checking negative diagnal with row - column constant values 
         
         res = []
         board = [["."] * n for i in range(n)]
