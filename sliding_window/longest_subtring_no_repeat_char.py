@@ -27,3 +27,33 @@ Answer = 3
         
         
         return max_res
+
+    
+    
+    """ 
+    Solution # 2 : Easer to understand
+    """
+    
+     def lengthOfLongestSubstring(s: str) -> int:
+        
+        result = ""
+        curr_max = ""
+        if len(s) == 0:
+            return 0
+        
+        for c in s:    
+            
+            # keep taking one character at a time and keep appending to curr_max if no repeated character is found
+            # otherwise remove all characters upto and including the first repetition seen
+            if c in curr_max:
+                # if character is found inside the curr_max string, find its index and remove all characters upto and including the repeated character
+                i = curr_max.index(c, 0, len(curr_max))
+                curr_max = curr_max[i+1:] + c
+                # keep track of curr_max's length
+            else:
+                # keep adding 
+                curr_max += c
+            
+            # final result is max of curr_max every is. 
+            if len(result) < len(curr_max):
+                result = curr_max
