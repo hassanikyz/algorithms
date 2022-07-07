@@ -57,3 +57,6 @@ Answer = 3
             # final result is max of curr_max every is. 
             if len(result) < len(curr_max):
                 result = curr_max
+
+
+        return result
