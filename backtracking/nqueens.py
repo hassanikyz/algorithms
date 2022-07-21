@@ -3,12 +3,12 @@
         :type n: int
         :rtype: List[List[str]]
         
-        Since it involves exploring all possible valid solutions backtracking is the most optimized method
-        positive Diagonals exhibit a property where adding row number and column number in a given diagonal result in a constant number.
-        E.g row = 0 , column 1 => 0 + 1 = 1. row = 1 and column = 0 => 1 + 0 = 1 and so on
-        negative Diagonals similarly exhibit this property for row - column
-        Thus creating a set() for columns, positive diagonal and negative diagonal allow us to see if we have already placed a queen 
-        (by placing c, r+c or r-c respectively in each set) 
+        Since it involves exploring all possible valid solutions backtracking is the most optimized method for this problem.
+        In a chess board, positive diagonals exhibit a property where adding row number and column number in a given diagonal result in a constant number.
+        E.g row = 0 , column 1 => 0 + 1 = 1. row = 1 and column = 0 => 1 + 0 = 1 and so on.
+        The negative Diagonals similarly exhibit this property for row - column formula
+        Thus creating a set() for column check, positive diagonal and negative diagonal allow us to see if we have already placed a queen there.
+        This is done by placing c, r + c or r-c respectively in each set.
         """
    
         
