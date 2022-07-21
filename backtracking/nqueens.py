@@ -2,11 +2,18 @@
         """
         :type n: int
         :rtype: List[List[str]]
+        
+        Since it involves exploring all possible valid solutions backtracking is the most optimized method
+        positive Diagonals exhibit a property where adding row number and column number in a given diagonal result in a constant number.
+        E.g row = 0 , column 1 => 0 + 1 = 1. row = 1 and column = 0 => 1 + 0 = 1 and so on
+        negative Diagonals similarly exhibit this property for row - column
+        Thus creating a set() for columns, positive diagonal and negative diagonal allow us to see if we have already placed a queen 
+        (by placing c, r+c or r-c respectively in each set) 
         """
    
         
         col = set()   # checking if a column already contains a queen
-        posDiag = set()  # checking positive diagnal with row+column constant values 
+        posDiag = set()  # checking positive diagnal with row + column constant values 
         negDiag = set()  # checking negative diagnal with row - column constant values 
         
         res = []
