@@ -6,7 +6,7 @@ that their cumulative weight is not more than a given number ‘C’. Write a fu
 Each item can only be selected once, which means either we put an item in the knapsack or skip it.
 
 Solution Approach
-We are going to try different combination by including an item in our set or not including in our set. For example if we select item #1, 
+We are going to try different combinations by including an item in our set or not including in our set. For example if we select item #1, 
 we would calculate the weight and profit and another combination when we don't include it.
 
 
