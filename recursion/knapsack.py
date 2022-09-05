@@ -7,14 +7,16 @@ Each item can only be selected once, which means either we put an item in the kn
 
 Solution Approach
 We are going to try different combinations by including an item in our set or not including in our set. For example if we select item #1, 
-we would calculate the weight and profit and another combination when we don't include it.
+we would calculate the weight and profit and also calculate the other combination when we don't include item #1.
 
 
 For example various combinations if 3 items are
 [nothing] => 0 profit
 item 1 only => profit from item 1 only
+(above two covers including item 1 and not including item 1)
 item 1 + item2 => profit from both items 1 and 2
 item 1 + item3  (skipping 2) => profit from both items 1 and 3
+(above two covers including item 2 and not including item 2)
 item 1 + item 2 + item 3 => profit from all three items 1,2,3
 item 2 => profit from item 2 only
 item 2 + item 3 => profit from both items 2 and 3
