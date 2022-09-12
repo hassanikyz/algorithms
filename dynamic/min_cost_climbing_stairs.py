@@ -48,7 +48,7 @@ def minCostClimbingStairs_ButtomUp(cost: List[int]) -> int:
         # recurrence equation is essentially cost of stepping on ith stair + min of either getting to 1 step before it or 2 steps before.
         dp[i] = cost[i] + min(dp[i-1], dp[i-2] )
 
-    # Top location has 0 cost so getting to top can happen either of two ways, you take 1 step to or 2 steps to get to top. 
+    # Top location has 0 cost of its own (when you step on it). Now getting to top can happen either of two ways, you take 1 step to or 2 steps to get to top. 
     # hence min cost to top is min of either of the two prior values
     return min(dp[-1], dp[-2])
 
