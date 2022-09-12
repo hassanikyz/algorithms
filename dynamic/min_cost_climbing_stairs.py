@@ -33,12 +33,6 @@ def minCostClimbingStairs_ButtomUp(cost: List[int]) -> int:
 
     dp = [0]*(len(cost))
 
-    if len(cost) == 0:
-        return 0
-
-    if len(cost) == 1:
-        return cost[0]
-
     # Since you can take 1 step or 2 steps to climb these stairs. 
     dp[0] = cost[0]
     dp[1] = cost[1]
