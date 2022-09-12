@@ -33,10 +33,12 @@ def minCostClimbingStairs_ButtomUp(cost: List[int]) -> int:
 
     dp = [0]*(len(cost))
 
-    # Since you can take 1 step or 2 steps to climb these stairs. 
+    # Since you can take 1 step or 2 steps to climb these stairs, so let's store (remember) cost of each step against the step that can be taken in an array
     dp[0] = cost[0]
     dp[1] = cost[1]
 
+    # now starting with 3rd step let's build upon minimum cost for each and then at the end look at min of the final two values since there are 
+    # two possible steps that can be taken at any given time.
     for i in range(2, len(cost)):
         
         # recurrence equation is essentially cost of stepping on ith stair + min of either getting to 1 step before it or 2 steps before.
