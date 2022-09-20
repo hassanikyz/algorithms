@@ -84,3 +84,29 @@ class Solution(object):
         # we are saying we need to find max between these two configurations 
         
         return max(get_max(nums[1:]), get_max(nums[:-1]))
+       
+       
+       
+    def rob_bottomUp(self, nums: List[int]) -> int:
+    
+        if len(nums) == 1:
+            return nums[0]
+        
+        def rob1(nums):
+            
+            slast, last = 0, 0
+            
+            for n in nums:
+                temp = max(n + slast, last)
+                slast = last
+                last = temp
+                
+            return last
+        
+        minusLast = len(nums) - 1
+        
+        # key idea is first find the max omitting the first house and then find the max omitting the last house
+        # at the end get the max of the two paths
+        
+        return max(rob1(nums[1:]), rob1(nums[:-1]))
+    
