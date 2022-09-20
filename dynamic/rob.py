@@ -58,7 +58,25 @@ class Solution(object):
             
         return max(dp[size - 1], dp[size - 2])
    
-
+    def rob_iterative_faster(self, nums: List[int]) -> int:
+        
+        secondlast, last = 0, 0 
+        
+        # A truly DP problem
+        # [secondlast, last, n, n+1, n+2, ...]
+        # Image you have a list of max value answers stored at last two locations in a list. The final answer is obviously
+        # based on max of the last two. Now here in this question we are storing the last two answers in two variables called
+        # secondlast and last
+        # Now you just need to compute the final verion using max of the last two values
+        # If your current answer becomes last then secondlast answer must take the last value
+        for n in nums:
+            temp = max(n+secondlast, last)
+            secondlast = last
+            last = temp
+            
+        return last
+    
+    
     def rob_recursive(self, nums):     
         memo = {}
    
