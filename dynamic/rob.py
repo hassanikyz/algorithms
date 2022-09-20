@@ -63,9 +63,12 @@ class Solution(object):
         memo = {}
    
         """
-        key idea: find the max from shorter and shorter lists from two different paths e.g 
-        starting from 1st element and 2nd element. Find the max between two options
-        1st and 0th + 2nd onwards.
+        key idea: Identify that there is recurrence relationship here. Find the max between two options/
+        
+        Recurrence equation:
+        x = find max result from array starting with 1st index (not 0th)
+        y = get 0th index value + find max result from array starting with 2nd index 
+        return max of x and y
         
         Terminating condition should be when length is 1 or 2. These are the base cases anyway.
         i-e what is the result when there are only 2 houses or just 1 house.
