@@ -34,7 +34,7 @@ class Solution(object):
                 helper(subset, pos+1)
        
 
-                #excluding the first element, let's collect subsets on remaining the remaining list
+                # excluding the first element, let's collect subsets on the remaining list
                 # but for that we must pass it the original subset list not the modified one
                 # hence remove the element from subset (essentially backtracking)
                 subset.pop()  
