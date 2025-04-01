@@ -12,11 +12,11 @@ def bubblesort(intList: list[int]) -> list[int]:
         # remaining unsorted ones
         for j in range(0, listlen - 1 - i):
             #look at two consecutive elements and swap if left is greater than right
-            if (arr[j] > arr[j+1] ):
+            if (intList[j] > intList[j+1] ):
                 # if left element is greater than right
                 # swap
-                arr[j], arr[j+1] = arr[j+1], arr[j]
-                #print(arr)
+                intList[j], intList[j+1] = intList[j+1], intList[j]
+                #print(intList)
  
     return intList
 
