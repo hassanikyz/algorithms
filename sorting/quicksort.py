@@ -1,5 +1,9 @@
 arr = [10, 7, 6, 4, 9, 3, 8, 5, 2, 0, 1]
 
+## Pick the first item as the pivot, send one guard from the left looking for a bad big value, 
+## send one guard from the right looking for a bad small value, swap them, and when the guards cross, 
+## recurse on the two sides. That is the whole algorithm
+
 def partition(lst, left, right):
 
     # terminating condition for recursion. If partition is 0 length or the left and right have crossed
