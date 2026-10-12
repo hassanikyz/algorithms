@@ -35,7 +35,7 @@ def balanced(lst, pos = 0, openCount = 0) :
   if pos == len(lst):
     return openCount == 0
 
-  if currentIndex < 0:
+  if openCount < 0:
     return False
 
   if lst[pos] == "(":
