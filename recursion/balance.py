@@ -42,7 +42,7 @@ def balanced(lst, pos = 0, openCount = 0) :
     return balanced(lst, pos+1, openCount+1)
   
   
-  if lst[startIndex] == ")":
+  if lst[pos] == ")":
     return balanced(lst, pos+1, openCount-1)
   
   
