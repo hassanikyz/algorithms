@@ -25,7 +25,7 @@ Example of unbalanced
 
 
 RECURSIVE APPROACH
-There are two pointers startIndex and currentIndex.
+There are two pointers pos and openCount (how many open Brackets at any given time).
 startIndex traverses the entire list
 currentIndex increases when '(' is found and decreases when ')' is found. 
 
