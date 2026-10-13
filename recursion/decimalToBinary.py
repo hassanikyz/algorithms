@@ -23,8 +23,13 @@ def decimalToBinary(num) :
   
   """
   
-  if num < 2:
-    return str(num)
+  if num < 0:
+    return "-" + decimalToBinary(-num)
+
+  if num == 0:
+    return "0"
+  if num == 1:
+    return "1"
   
   return decimalToBinary(num//2) + decimalToBinary(num % 2)
 
